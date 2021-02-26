@@ -4,3 +4,4 @@ build
 .terraform
 node_modules
 *.bak*
+.env
