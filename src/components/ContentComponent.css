@@ -1,0 +1,59 @@
+@media only screen and (max-width: 3200px) {
+    .video {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 60%;
+        transform: translate(-50%, -50%);
+        border-radius: 25px;
+        color: white;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .video {
+        position: fixed;
+        top: 45%;
+        left: 50%;
+        width: 85%;
+        transform: translate(-50%, -50%);
+        border-radius: 25px;
+        color: white;
+    }
+}
+
+a {
+    color: white
+}
+
+button {
+    margin: 5px;
+}
+
+h1 {
+    margin-block-end: 0em;
+    font-size: 38px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.buttons a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.password {
+    position: fixed;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    color: white;
+}
+
+#error-message {
+    color: red;
+}

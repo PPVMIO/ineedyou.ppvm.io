@@ -1,0 +1,6 @@
+.DS_Store
+vids
+build
+.terraform
+node_modules
+*.bak*
