@@ -8,6 +8,20 @@
         border-radius: 25px;
         color: white;
     }
+    .loading-title {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+    }
+    .loading {
+        position: fixed;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -19,6 +33,20 @@
         transform: translate(-50%, -50%);
         border-radius: 25px;
         color: white;
+    }
+    .loading-title {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+    }
+    .loading {
+        position: fixed;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
     }
 }
 

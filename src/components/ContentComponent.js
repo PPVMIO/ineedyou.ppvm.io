@@ -2,12 +2,13 @@ import React from 'react';
 import './ContentComponent.css'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import YouTubeEmbed from 'react-youtube-embed'
+import ReactLoading from 'react-loading';
 
-//charli xcx, asap rocky
-const VIDEOS = ['_eLryuBCO-M', 'TbJE-KVZvTA']
+//i need you - PPVMIO, forever - charli xcx
+const VIDEOS = ['0tb3zVZmYcg', 'TbJE-KVZvTA']
 const BUTTONTEXT = ['inspiration', 'i need you']
 class ContentComponent extends React.Component {
-    
+
     constructor(props) {
         super(props);
         this.state = {
@@ -15,6 +16,7 @@ class ContentComponent extends React.Component {
             currentImage: '',
             backgroundStyle: {
                 height: '100%',
+                backgroundImage: '',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'repeat',
                 backgroundSize: 'cover',
@@ -22,7 +24,6 @@ class ContentComponent extends React.Component {
             showVideo: false,
             video: VIDEOS[0],
             buttonText: BUTTONTEXT[0]
-
         }
     }
 
@@ -82,17 +83,27 @@ class ContentComponent extends React.Component {
 
     componentDidMount() {
         this.importAll(require.context('../images', false, /\.(jpeg)$/));
-        setInterval(this.updateCurrentImage, 5000);
+        setInterval(this.updateCurrentImage, 3000);
     }
 
     render() {
 
-        return <div style={this.state.backgroundStyle}>
+        if (!this.state.backgroundStyle.backgroundImage) {
+            return <div class="loading">
+                <center>
+                    <h1>Loading in 3000ms</h1>
+                    <ReactLoading type={'bubbles'} color={'grey'} width={'35%'}></ReactLoading>
+                    <ReactLoading type={'spokes'} color={'grey'} width={'35%'}></ReactLoading>
+                    <ReactLoading type={'spokes'} color={'grey'} width={'35%'}></ReactLoading>
+                    <ReactLoading type={'bubbles'} color={'grey'} width={'35%'}></ReactLoading>
+                </center>
+            </div>
+        } else return <div style={this.state.backgroundStyle}>
             {!this.state.showVideo &&
                 <div class="password">
+                    <YouTubeEmbed aspectRatio="0x0" id={this.state.video}></YouTubeEmbed>
                     <h1>I NEED YOU</h1>
                     <Formik
-
                         initialValues={{
                             password: '',
                         }}
@@ -101,7 +112,7 @@ class ContentComponent extends React.Component {
                             if (!values.password) {
                                 errors.password = 'password required';
                             } else if (
-                                values.password !== 'abc'
+                                values.password !== 'bball123'
                             ) {
                                 errors.password = "that ain't it";
                             }
